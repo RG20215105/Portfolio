@@ -1,0 +1,38 @@
+/* Google Fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Ubuntu:wght@300;400&display=swap");
+
+/* font-family: 'Quicksand', sans-serif; */
+/* font-family: 'Ubuntu', sans-serif; */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Navbar Section */
+nav {
+  border-bottom: solid 2px #fff;
+  font-size: 1.5rem;
+  /* box-shadow: 0 2px 2px #fff; */
+}
+.navbar-brand {
+  font-size: 2.5rem;
+}
+.navbar-links {
+  transition: all 0.3s;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+
+a.navbar-links:hover {
+  color: #f57f17c4 !important;
+  border-bottom: solid 1px #f57f17c4;
+}
+
+/* Intro and Title Section in Home */
+.intro-section {
+  margin-top: 76px;
+  overflow: hidden;
+  align-items: center;
+}
+
