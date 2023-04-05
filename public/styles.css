@@ -24,9 +24,25 @@ nav {
   font-weight: 700;
 }
 
-a.navbar-links:hover {
+/* Following 3 blocks of styling are to provide perfect underline to navlinks without distorting DOM */
+a.navbar-links {
+  position: relative;
+}
+
+a.navbar-links::after {
+  content: "";
+  transition: all 0.4s;
+  height: 2px;
+  width: 100%;
+  background-color: #f57f17c4;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+a.navbar-links:hover::after {
+  opacity: 1;
   color: #f57f17c4 !important;
-  border-bottom: solid 1px #f57f17c4;
 }
 
 /* Intro and Title Section in Home */
@@ -36,3 +52,25 @@ a.navbar-links:hover {
   align-items: center;
 }
 
+/* Footer Section */
+#footer{
+  padding: 1% 0 0.5%;
+  font-size: larger;
+}
+/* @media screen and (max-width : 992px){
+  .social-icons i {
+    margin: 2.5% 3%;
+  }
+} */
+.social-icons i {
+  margin: 2.5% 3%;
+  transition: all 0.3s;
+}
+
+.social-icons i:hover {
+  transform: scale(1.5);
+}
+
+.social-icons .fa-xl:hover {
+  color: #fff !important;
+}
