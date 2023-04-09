@@ -4,8 +4,8 @@
 /* font-family: 'Quicksand', sans-serif; */
 /* font-family: 'Ubuntu', sans-serif; */
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  /* padding: 0 !important; */
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -47,23 +47,39 @@ a.navbar-links:hover::after {
 
 /* Intro and Title Section in Home */
 .intro-section {
-  margin-top: 76px;
+  margin-top: 76px !important; /* Navbar Width in Normal Screens*/
   overflow: hidden;
   align-items: center;
 }
 
 /* Footer Section */
 #footer{
-  padding: 1% 0 0.5%;
+  padding: 1% 0 0.5% ;
   font-size: larger;
 }
-/* @media screen and (max-width : 992px){
-  .social-icons i {
-    margin: 2.5% 3%;
+
+@media screen and (max-width : 991px){
+  #footer{
+    padding-top: 0.5%;
   }
-} */
+  .social-icons i {
+    margin: 1.5% 1.5% !important;
+  }
+}
+
+@media screen and (max-width : 400px){
+  #footer{
+    font-size:16px;
+  }
+}
+
 .social-icons i {
-  margin: 2.5% 3%;
+  margin: 1.3% 1.5% !important;
+  transition: all 0.3s;
+}
+
+.social-icons i {
+  margin: 1.3% 1.5% !important;
   transition: all 0.3s;
 }
 
