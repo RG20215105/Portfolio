@@ -1,11 +1,35 @@
 /* Google Fonts  */
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Ubuntu:wght@300;400&display=swap");
 
-/* font-family: 'Quicksand', sans-serif; */
 * {
   margin: 0 !important;
   /* padding: 0 !important; */
   font-family: "Ubuntu", sans-serif;
+}
+
+/* Utility Classes */
+h2{
+  font-family: 'Quicksand',sans-serif;
+}
+.ubuntu-300{
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+.ubuntu-400{
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+.quicksand-400{
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+.quicksand-500{
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+.quicksand-700{
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
 }
 
 /* Navbar Section */
@@ -18,8 +42,6 @@ nav {
 }
 .navbar-links {
   transition: all 0.3s;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
 }
 
 /* Following 3 blocks of styling are to provide perfect underline to navlinks without distorting DOM */
@@ -44,19 +66,37 @@ a.navbar-links:hover::after {
 
 /* Intro and Title Section in Home */
 .intro-section {
-  margin-top: 76px !important; /* Navbar Width in Normal Screens*/
+  margin-top: 76px !important; /* Navbar Width in Large Screens*/
   overflow: hidden;
   align-items: center;
 }
-
-
-
+.intro-section img.primary-img{
+  transition: all 0.5s ease; /* To apply JQuery to add class for opacity*/
+}
 /* About Section */
 #about img {
   border-radius: 35% !important;
   width: 50%;
+  opacity: 75%;
 }
 
+@media screen and (min-width: 992px) {
+  #about img {
+  transition: transform 0.3s,opacity 2s;
+  }
+  #about img:hover{
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+#about .col-lg-6 h2{
+  transition: all 0.3s;
+}
+#about .col-lg-6 h2:hover{
+  color: rgba(0,0,0,0.7);
+  cursor: pointer;
+}
 #cvBtn {
   transition: all 0.3s;
 }
@@ -64,11 +104,54 @@ a.navbar-links:hover::after {
   transform: scale(1.2);
 }
 
+/* Skills section */
+#skills h2{
+  transition: all 0.3s;
+}
+#skills h2:hover{
+  color: #f57f17c4;
+  cursor: pointer;
+}
+
+@media screen and (min-width:992px) {
+  #skills div.row{
+    height: 40vh;
+  }
+}
 
 
+.card{
+  transition: all 0.3s;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+
+.card .card-body{
+  font-size: large;
+  transition: font-size 0.3s;
+}
+.card .card-body:hover{
+  font-size: larger;
+}
 
 
+/* Contact Section */
+#contact h2{
+  transition: all 0.3s;
+}
+#contact h2:hover{
+  color: rgba(0,0,0,0.7);
+  cursor: pointer;
+}
 
+#contact .fa-address-card{
+  transform: scale(2);
+  transition: all 0.3s;
+}
+/* #contact .fa-address-card:hover{
+  color: #fff;
+} */
 /* Footer Section */
 #footer {
   padding: 1% 0 0.5%;
