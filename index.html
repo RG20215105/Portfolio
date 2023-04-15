@@ -164,10 +164,17 @@
             <div class="card text-bg-light text-center h-100">
               <div class="card-header display-5">DSA in C++</div>
               <div class="card-body">
-                <p class="card-text">Arrays,Recursion, Backtracking, Dynamic Programming, Linked
+                <p class="card-text">
+                  Arrays,Recursion, Backtracking, Dynamic Programming, Linked
                   List,Stacks, Queues, Binary Trees, Binary Search Trees, Heaps,
-                  Graphs</p> 
-                <a href="https://leetcode.com/RGRik19/" class="btn btn-dark mt-2 text-uppercase fw-bold" target="_blank">Leetcode</a>
+                  Graphs
+                </p>
+                <a
+                  href="https://leetcode.com/RGRik19/"
+                  class="btn btn-dark mt-2 text-uppercase fw-bold"
+                  target="_blank"
+                  >Leetcode</a
+                >
               </div>
             </div>
           </div>
@@ -175,8 +182,13 @@
             <div class="card text-bg-light text-center h-100">
               <div class="card-header display-5">Front-End Web Design</div>
               <div class="card-body">
-                <p class="card-text">HTML, CSS, Bootstrap, JavaScript, React</p> 
-                <a href="https://github.com/RG20215105" class="btn btn-dark mt-2 text-uppercase fw-bold" target="_blank">GitHub</a>
+                <p class="card-text">HTML, CSS, Bootstrap, JavaScript, React</p>
+                <a
+                  href="https://github.com/RG20215105"
+                  class="btn btn-dark mt-2 text-uppercase fw-bold"
+                  target="_blank"
+                  >GitHub</a
+                >
               </div>
             </div>
           </div>
@@ -184,8 +196,13 @@
             <div class="card text-bg-light text-center h-100">
               <div class="card-header display-5">Backend Developer</div>
               <div class="card-body">
-                <p class="card-text">NodeJS, Express, Mongoose, MongoDB</p> 
-                <a href="https://github.com/RG20215105" class="btn btn-dark mt-2 text-uppercase fw-bold" target="_blank">GitHub</a>
+                <p class="card-text">NodeJS, Express, Mongoose, MongoDB</p>
+                <a
+                  href="https://github.com/RG20215105"
+                  class="btn btn-dark mt-2 text-uppercase fw-bold"
+                  target="_blank"
+                  >GitHub</a
+                >
               </div>
             </div>
           </div>
@@ -194,23 +211,60 @@
     </section>
 
     <!-- Contact Section  -->
-    <section id="contact" class="bg-warning">
+    <section id="contact" class="bg-warning pb-3">
       <h2 class="text-center text-uppercase py-lg-2 display-3 fw-bold">
         Contact || Hire
       </h2>
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 mb-lg-3">
-            <div class="card text-bg-dark text-center">
-              <div class="card-title my-4 text-start ms-4">
-                <i class="fa-solid fa-address-card fa-2xl" style="color: #ffc107;"></i>
-              </div>
-              <div class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit non voluptas recusandae debitis, natus a.
-              </div>
-            </div>
+      <div class="container bg-dark mx-auto mt-2 rounded-4" >
+        <p class="pt-4 pb-2 text-center">
+          <i class="fa-solid fa-address-card fa-2xl" style="color: #ffc107"></i>
+        </p>
+        <form class="row g-3 needs-validation mt-4" novalidate>
+          <div class="form-floating col-lg-6 mb-2 mb-lg-0">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Name"
+              autocomplete="off"
+            />
+            <label for="name">Name</label>
           </div>
-        </div>
+          <div class="form-floating col-lg-6">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              autocomplete="off"
+            />
+            <label for="email">Email address</label>
+          </div>
+          <div class="form-floating col-lg-12 mt-2">
+            <input
+              type="text"
+              class="form-control"
+              id="subject"
+              placeholder="Subject"
+              autocomplete="off"
+            />
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-floating col-lg-12 mt-2">
+            <textarea
+              class="form-control"
+              placeholder="Drop your message here"
+              id="message"
+              style="height: 100%"
+              autocomplete="off"
+            ></textarea>
+            <label for="message">Message</label>
+          </div>
+          <br />
+          <div class="container-fluid d-flex justify-content-center py-2">
+            <button type="submit" class="btn btn-lg btn-warning">Send</button>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -273,10 +327,36 @@
       $("img.primary-img").hover(function () {
         $(this).toggleClass("opacity-100");
       });
-      $('div.card').hover(function(){
-        $(this).toggleClass("text-bg-light text-bg-warning",{duration:3000}),
-        $(this).toggleClass("text-light border-light",{duration:3000})
-      })
+      $("#skills>div>div>div>div.card").hover(function () {
+        $(this).toggleClass("text-bg-light text-bg-warning", {
+          duration: 3000,
+        }),
+          $(this).toggleClass("text-light border-light", { duration: 3000 });
+      })(
+        // Bootstrap JS to disable form submissions upon invalid fields
+        () => {
+          "use strict";
+
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          const forms = document.querySelectorAll(".needs-validation");
+
+          // Loop over them and prevent submission
+          Array.from(forms).forEach((form) => {
+            form.addEventListener(
+              "submit",
+              (event) => {
+                if (!form.checkValidity()) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+
+                form.classList.add("was-validated");
+              },
+              false
+            );
+          });
+        }
+      )();
     </script>
   </body>
 </html>

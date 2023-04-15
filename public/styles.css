@@ -120,10 +120,10 @@ a.navbar-links:hover::after {
 }
 
 
-.card{
+#skills .card{
   transition: all 0.3s;
 }
-.card:hover{
+#skills .card:hover{
   transform: scale(1.1);
 }
 
@@ -145,13 +145,19 @@ a.navbar-links:hover::after {
   cursor: pointer;
 }
 
-#contact .fa-address-card{
+#contact i.fa-2xl{
   transform: scale(2);
   transition: all 0.3s;
 }
-/* #contact .fa-address-card:hover{
-  color: #fff;
-} */
+#contact i.fa-2xl:hover{
+  color: #fff !important;
+}
+@media screen and (max-width: 575px){
+  #contact div.container.bg-dark.mx-auto{
+    width: 90%;
+  }
+}
+
 /* Footer Section */
 #footer {
   padding: 1% 0 0.5%;
