@@ -75,7 +75,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  href="#contact"
+                  href="#skills"
                   class="nav-link text-warning navbar-links quicksand-700 me-lg-5 mb-2 mb-lg-0"
                   >Skills</a
                 >
@@ -215,11 +215,11 @@
       <h2 class="text-center text-uppercase py-lg-2 display-3 fw-bold">
         Contact || Hire
       </h2>
-      <div class="container bg-dark mx-auto mt-2 rounded-4" >
+      <div class="container bg-dark mx-auto mt-2 rounded-4">
         <p class="pt-4 pb-2 text-center">
           <i class="fa-solid fa-address-card fa-2xl" style="color: #ffc107"></i>
         </p>
-        <form class="row g-3 needs-validation mt-4" novalidate>
+        <form class="row g-3 needs-validation mt-4" onsubmit="sendEmail(); reset(); return false;" novalidate>
           <div class="form-floating col-lg-6 mb-2 mb-lg-0">
             <input
               type="text"
@@ -305,58 +305,78 @@
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
     <!-- Animation on Scroll JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <!-- SMPT JS CDN for Contact Form working condn -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-      // AOS activate
-      AOS.init();
-      // Typed JS Custom JS to implement typing effect
-      var typed = new Typed("#typing-element", {
-        strings: [
-          "Full Stack Development",
-          "DSA in C++",
-          "Solving Real-Life Problems through Technology",
-        ],
-        typeSpeed: 50,
-        backSpeed: 50,
-        startDelay: 1000,
-        backDelay: 1000,
-        loopDelay: 1000,
-        loop: true,
-      });
-      // JQuery to implement a particular class on primary-image on hovering
-      $("img.primary-img").hover(function () {
-        $(this).toggleClass("opacity-100");
-      });
-      $("#skills>div>div>div>div.card").hover(function () {
-        $(this).toggleClass("text-bg-light text-bg-warning", {
-          duration: 3000,
-        }),
-          $(this).toggleClass("text-light border-light", { duration: 3000 });
-      })(
-        // Bootstrap JS to disable form submissions upon invalid fields
-        () => {
-          "use strict";
+        // AOS activate
+        AOS.init();
+        // Typed JS Custom JS to implement typing effect
+        var typed = new Typed("#typing-element", {
+          strings: [
+            "Full Stack Development",
+            "DSA in C++",
+            "Solving Real-Life Problems through Technology",
+          ],
+          typeSpeed: 50,
+          backSpeed: 50,
+          startDelay: 1000,
+          backDelay: 1000,
+          loopDelay: 1000,
+          loop: true,
+        });
+        // JQuery to implement a particular class on primary-image on hovering
+        $("img.primary-img").hover(function () {
+          $(this).toggleClass("opacity-100");
+        });
+        $("#skills>div>div>div>div.card").hover(function () {
+          $(this).toggleClass("text-bg-light text-bg-warning", {
+            duration: 3000,
+          }),
+            $(this).toggleClass("text-light border-light", { duration: 3000 });
+        })(
+          // Bootstrap JS to disable form submissions upon invalid fields
+          () => {
+            "use strict";
 
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          const forms = document.querySelectorAll(".needs-validation");
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll(".needs-validation");
 
-          // Loop over them and prevent submission
-          Array.from(forms).forEach((form) => {
-            form.addEventListener(
-              "submit",
-              (event) => {
-                if (!form.checkValidity()) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
+            // Loop over them and prevent submission
+            Array.from(forms).forEach((form) => {
+              form.addEventListener(
+                "submit",
+                (event) => {
+                  if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
 
-                form.classList.add("was-validated");
-              },
-              false
-            );
-          });
-        }
-      )();
+                  form.classList.add("was-validated");
+                },
+                false
+              );
+            });
+          }
+        )();
+
+        function sendEmail(){
+          Email.send({
+            SecureToken: "a70eeb62-3c77-4d23-8a29-9dc3d10a3296",
+            To: "goswami.rounak.03@gmail.com",
+            From: "goswami.rounak.03@gmail.com",
+            Subject: document.getElementById("subject").value,
+            Body: `
+            <b> Name : </b>${document.getElementById("name").value}
+            <br>
+            <b> Email : </b>${document.getElementById("email").value}
+            <br>
+            ${document.getElementById("message").value}
+            `,
+          }).then((message) => alert("Message Sent Successfully !"));
+
+          // SMPT elasticemail password :- 4D1DEA7432BB040B142E4DBB965008B406FB
+          // SMPT SecureToken :- a70eeb62-3c77-4d23-8a29-9dc3d10a3296
+      }
     </script>
   </body>
 </html>
