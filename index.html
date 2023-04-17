@@ -26,6 +26,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Animation on Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="public/styles.css" />
     <title>Rounak Goswami | Portfolio</title>
@@ -98,7 +100,9 @@
             class="col-lg-6 text-center d-flex align-items-center my-lg-0 my-5"
           >
             <!-- Intro Section -->
-            <h1 class="display-4">
+            <h1 class="display-4" data-aos="fade-right"     data-aos-delay="50"
+            data-aos-duration="2000"
+>
               <span class="text-light ubuntu-400"
                 >Hey There ! I am ROUNAK GOSWAMI, and I am interested in
               </span>
@@ -106,7 +110,8 @@
               <span class="text-warning fw-bold" id="typing-element"></span>
             </h1>
           </div>
-          <div class="col-lg-6 primary-img-div title mb-5">
+          <div class="col-lg-6 primary-img-div title mb-5" data-aos="fade-left"     data-aos-delay="50"
+          data-aos-duration="2500">
             <img
               class="primary-img img-fluid rounded-5 mx-auto d-block mt-lg-3 opacity-75"
               id="primary-img"
@@ -123,12 +128,14 @@
     <section id="about" class="bg-warning">
       <div class="row">
         <div
-          class="col-lg-6 my-lg-5 my-2 justify-content-center d-flex align-items-center"
+          class="col-lg-6 my-lg-5 my-2 justify-content-center d-flex align-items-center" data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <img src="./public/dp.jpg" alt="" class="img-fluid img-thumbnail" />
         </div>
         <div
-          class="col-lg-6 text-center my-lg-5 my-2 d-block align-items-center"
+          class="col-lg-6 text-center my-lg-5 my-2 d-block align-items-center" data-aos="fade-down"
+          data-aos-duration="1500"
         >
           <h2 class="display-3 text-uppercase fw-bold">About Me</h2>
           <p class="fs-5 lh-lg pt-3">
@@ -160,8 +167,10 @@
       </h2>
       <div class="container mx-auto">
         <div class="row">
-          <div class="col-lg-4 mb-4 mb-lg-1">
-            <div class="card text-bg-light text-center h-100">
+          <div class="col-lg-4 mb-4 mb-lg-1" data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out">
+            <div class="card text-bg-light text-center h-100" >
               <div class="card-header display-5">DSA in C++</div>
               <div class="card-body">
                 <p class="card-text">
@@ -178,8 +187,10 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 mb-lg-1">
-            <div class="card text-bg-light text-center h-100">
+          <div class="col-lg-4 mb-4 mb-lg-1" data-aos="zoom-in"
+          data-aos-duration="700"
+          data-aos-easing="ease-in-out">
+            <div class="card text-bg-light text-center h-100" >
               <div class="card-header display-5">Front-End Web Design</div>
               <div class="card-body">
                 <p class="card-text">HTML, CSS, Bootstrap, JavaScript, React</p>
@@ -192,8 +203,10 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-lg-1">
-            <div class="card text-bg-light text-center h-100">
+          <div class="col-lg-4 mb-lg-1" data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out">
+            <div class="card text-bg-light text-center h-100" >
               <div class="card-header display-5">Backend Developer</div>
               <div class="card-body">
                 <p class="card-text">NodeJS, Express, Mongoose, MongoDB</p>
@@ -215,7 +228,8 @@
       <h2 class="text-center text-uppercase pt-3 mb-3 pb-lg-4 display-3 fw-bold">
         Contact || Hire
       </h2>
-      <div class="container bg-dark mx-auto mt-2 rounded-4">
+      <div class="container bg-dark mx-auto mt-2 rounded-4" data-aos="zoom-in"
+      data-aos-duration="1500">
         <p class="pt-4 pb-2 text-center">
           <i class="fa-solid fa-address-card fa-2xl" style="color: #ffc107"></i>
         </p>
@@ -304,7 +318,7 @@
     <!-- TypedJS -->
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
     <!-- Animation on Scroll JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- SMPT JS CDN for Contact Form working condn -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
